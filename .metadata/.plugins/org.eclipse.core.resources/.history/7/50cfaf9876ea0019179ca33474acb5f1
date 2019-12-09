@@ -1,0 +1,60 @@
+/***
+* Name: ms_tp3_Azemena_Henri_Joel
+* Author: azem
+* Description: 
+* Tags: Tag1, Tag2, TagN
+***/
+
+model ms_tp3_Azemena_Henri_Joel
+
+/* Insert your model definition here */
+
+global {
+	
+	int nbreRobot <-3;
+	int nbreCentreControl <-3;
+	int nbredangerPoint <-3;
+	int nbrePanneau <- 9;
+	
+	init{
+		create Robot number:nbreRobot;
+		create Centre_Control number:nbreCentreControl;
+		create DangerPoint number: nbredangerPoint;
+		create Panneau number:nbrePanneau; 
+	}
+}
+
+species Robot{
+	
+}
+
+species Centre_Control{
+	
+}
+
+species DangerPoint{
+	
+}
+
+species Panneau{
+	
+}
+
+
+experiment my_main_code {
+	
+	output{
+		display Mon_Affichage{
+			
+		}
+	}
+}
+
+
+
+
+
+
+
+
+

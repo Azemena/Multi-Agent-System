@@ -1,0 +1,58 @@
+/***
+* Name: ms_tp4_Azemena_Henri_Joel
+* Author: azem
+* Description: 
+* Tags: Tag1, Tag2, TagN
+***/
+
+model ms_tp4_Azemena_Henri_Joel
+
+/* Insert your model definition here */
+
+global{
+	
+	int nbre_herbe_initial<-2000;
+	int nbre_loup_initial<-5;
+	int nbre_agneaux_initial<-20;
+	float taille_min_general<-0.01;
+	
+	init{
+		create Herbe number:nbre_herbe_initial;
+		create Loup number:nbre_loup_initial;
+		create Agneaux number:nbre_agneaux_initial;
+	}
+}
+
+species Herbe{
+	
+	aspect base {
+		draw circle(0.1) color:#green;
+	}
+	
+}
+
+species Agneaux{
+	aspect base{
+		draw circle(2)color:#brown;
+	}
+	
+}
+
+species Loup{
+	aspect base{
+		draw circle(2.5)color:#black;
+	}
+	
+}
+
+experiment My_Main{
+	
+	output{
+		
+		display Affiche{
+			species Loup aspect:base;
+			species Agneaux aspect:base;
+			species Herbe aspect:base;
+		}
+	}
+}

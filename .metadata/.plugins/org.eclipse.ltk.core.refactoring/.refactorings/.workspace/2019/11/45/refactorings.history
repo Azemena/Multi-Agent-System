@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Natural_Evolution_Rabbits&apos; to &apos;g4_Evolution_Naturel_des_Lapins&apos;" description="Rename resource &apos;Natural_Evolution_Rabbits&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Natural_Evolution_Rabbits" name="g4_Evolution_Naturel_des_Lapins" stamp="1573377239339" updateReferences="true"/>
+</session>

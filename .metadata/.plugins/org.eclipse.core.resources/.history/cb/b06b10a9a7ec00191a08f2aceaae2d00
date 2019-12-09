@@ -1,0 +1,78 @@
+/***
+* Name: ms_tp4_Azemena_Henri_Joel
+* Author: azem
+* Description: 
+* Tags: Tag1, Tag2, TagN
+***/
+
+model ms_tp4_Azemena_Henri_Joel
+
+/* Insert your model definition here */
+
+global{
+	float dimension_du_terrain <- 3#m;
+	geometry shape <- square(dimension_du_terrain);
+	int nbre_herbe_initial<-2000;
+	int nbre_loup_initial<-5;
+	int nbre_agneaux_initial<-20;
+	float taille_min_general<-0.01;
+	
+	init{
+		create Herbe number:nbre_herbe_initial;
+		create Loup number:nbre_loup_initial;
+		create Agneaux number:nbre_agneaux_initial;
+	}
+}
+
+species Herbe{
+	float taille_herbe<-0.01;
+	
+	reflex Vivre{
+		taille_herbe<- taille_herbe + 0.01;
+		if(taille_herbe>0.5){
+			
+			//do herbe_meurt;
+		}
+		
+		float herbe_grandi{
+			float taille_exacte<- 1/100*taille_herbe;
+			float taille_courante<- (round(tailleexacte*1000))/1000;
+			return taille_courante;
+		}
+		
+//		action herbe_meurt{
+	//		do die;
+		//}
+	
+	}	
+		aspect base {
+		draw circle(0.3) color:#green;
+	}
+	
+}
+
+species Agneaux{
+	aspect base{
+		draw circle(1)color:#brown;
+	}
+	
+}
+
+species Loup{
+	aspect base{
+		draw circle(2)color:#black;
+	}
+	
+}
+
+experiment My_Main{
+	
+	output{
+		
+		display Affiche{
+			species Loup aspect:base;
+			species Agneaux aspect:base;
+			species Herbe aspect:base;
+		}
+	}
+}
